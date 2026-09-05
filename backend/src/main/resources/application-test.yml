@@ -1,0 +1,11 @@
+spring:
+  mail:
+    host: 127.0.0.1
+    port: 2525
+app:
+  media-root: ${java.io.tmpdir}/personal-blog-test-media
+  bootstrap-admin:
+    username: ""
+    email: ""
+    password: ""
+

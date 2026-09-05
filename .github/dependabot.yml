@@ -1,0 +1,25 @@
+version: 2
+updates:
+  - package-ecosystem: maven
+    directory: /backend
+    schedule:
+      interval: weekly
+    target-branch: dev
+    groups:
+      spring-minor:
+        patterns: ["org.springframework*", "org.springframework.boot*"]
+        update-types: ["minor", "patch"]
+  - package-ecosystem: npm
+    directory: /frontend
+    schedule:
+      interval: weekly
+    target-branch: dev
+    groups:
+      nuxt-minor:
+        patterns: ["nuxt", "@nuxt/*"]
+        update-types: ["minor", "patch"]
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    target-branch: dev

@@ -1,0 +1,52 @@
+{
+  "name": "personal-blog-frontend",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.19.0",
+  "engines": {
+    "node": ">=24",
+    "pnpm": ">=11"
+  },
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "preview": "nuxt preview",
+    "typecheck": "nuxt typecheck",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:e2e": "playwright test",
+    "generate:types": "openapi-typescript http://localhost:8080/v3/api-docs -o app/types/openapi.d.ts",
+    "check:types": "pnpm generate:types && git diff --exit-code -- app/types/openapi.d.ts"
+  },
+  "dependencies": {
+    "@codemirror/lang-markdown": "^6.3.4",
+    "@codemirror/state": "^6.5.2",
+    "@codemirror/view": "^6.43.11",
+    "@nuxt/ui": "4.11.0",
+    "@pinia/nuxt": "1.0.2",
+    "@shikijs/rehype": "4.4.3",
+    "codemirror": "^6.0.2",
+    "nuxt": "4.5.2",
+    "pinia": "^3.0.3",
+    "rehype-sanitize": "^6.0.0",
+    "rehype-stringify": "^10.0.1",
+    "remark-gfm": "^4.0.1",
+    "remark-parse": "^11.0.0",
+    "remark-rehype": "^11.1.2",
+    "shiki": "4.4.3",
+    "unified": "^11.0.5",
+    "zod": "4.5.4"
+  },
+  "devDependencies": {
+    "@nuxt/eslint": "^1.13.0",
+    "@nuxt/test-utils": "4.2.0",
+    "@playwright/test": "^1.58.2",
+    "@vue/test-utils": "^2.4.6",
+    "eslint": "^9.39.2",
+    "happy-dom": "^20.8.3",
+    "openapi-typescript": "^7.13.0",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.18",
+    "vue-tsc": "^3.2.5"
+  }
+}

@@ -4,7 +4,7 @@
 
 ## 当前状态
 
-技术栈已经在 `002-technology-selection` 确认，但尚未初始化 Nuxt 工程、构建文件或项目依赖。
+Nuxt 4 MVP 已初始化。公共页面使用 SSR，`/studio/**` 与 `/admin/**` 使用客户端渲染和私有禁缓存响应。
 
 ## 技术基线
 
@@ -24,8 +24,22 @@
 
 所有页面都必须正确处理未登录、无权限、空数据、加载中、失败和内容已失效等状态。前端展示不能替代后端权限校验。
 
-## 后续建项输入
+## 本地启动
+
+Node.js 24 和 pnpm 11 环境下执行：
+
+```powershell
+corepack enable
+pnpm install
+pnpm dev
+```
+
+开发服务器运行在 `http://localhost:3000`，并把 `/api` 代理到 `http://localhost:8080`。因此可以用 IDEA 启动后端、VS Code 启动前端进行同源 Session/CSRF 联调。
+
+提交前运行 `pnpm lint`、`pnpm typecheck`、`pnpm test` 和 `pnpm build`。
+
+## 设计输入
 
 - [产品需求](../ai/iterations/001-foundation/requirements.md)
-- [当前架构设计](../ai/iterations/002-technology-selection/architecture-design.md)
-- [测试计划](../ai/iterations/002-technology-selection/test-plan.md)
+- [当前架构设计](../ai/iterations/003-mvp-implementation/architecture-design.md)
+- [测试计划](../ai/iterations/003-mvp-implementation/test-plan.md)

@@ -4,7 +4,7 @@
 
 ## 当前状态
 
-技术栈已经在 `002-technology-selection` 确认，但尚未初始化 Spring Boot 工程、构建文件、数据库或第三方依赖。
+Spring Boot MVP 已初始化。IDEA 可直接导入本目录的 `pom.xml`，项目统一使用 Maven Wrapper 3.9.11。
 
 ## 技术基线
 
@@ -28,8 +28,20 @@
 
 模块之间应通过明确的应用服务边界协作，不得直接跨模块修改内部数据。
 
-## 后续建项输入
+## 本地启动
+
+先在仓库根目录启动 `compose.dev.yaml`。随后设置环境变量：
+
+- `DB_PASSWORD`：与根目录 `.env` 一致，必填。
+- `APP_COOKIE_SECURE=false`：仅本地 HTTP 联调使用。
+- 可选 `BOOTSTRAP_ADMIN_USERNAME`、`BOOTSTRAP_ADMIN_EMAIL`、`BOOTSTRAP_ADMIN_PASSWORD`：仅在尚无管理员时初始化一个管理员。
+
+在 IDEA 运行 `com.charon.personalblog.PersonalBlogApplication`，或执行 `.\\mvnw.cmd spring-boot:run`。
+
+Swagger UI：`http://localhost:8080/swagger-ui.html`；健康检查：`http://localhost:8080/actuator/health`。
+
+## 设计输入
 
 - [产品需求](../ai/iterations/001-foundation/requirements.md)
-- [当前架构设计](../ai/iterations/002-technology-selection/architecture-design.md)
-- [技术决策](../ai/iterations/002-technology-selection/decisions.md)
+- [当前架构设计](../ai/iterations/003-mvp-implementation/architecture-design.md)
+- [当前任务](../ai/iterations/003-mvp-implementation/tasks.md)
